@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Panel Administrativo | Capital Risk Brokers</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="admin-body">
+
+    <!-- ==================== PANTALLA DE LOGIN ==================== -->
+    <div id="loginScreen" class="admin-login-screen">
+        <form id="loginForm" class="admin-login-card">
+            <img src="assets/logo-capital-risk.png" alt="Capital Risk Brokers" class="admin-login-logo">
+            <h1>Panel Administrativo</h1>
+            <p class="admin-login-sub">Acceso exclusivo para el administrador del sitio.</p>
+
+            <div class="form-group">
+                <label for="loginEmail">Correo</label>
+                <input type="email" id="loginEmail" required placeholder="tu@correo.com" autocomplete="username">
+            </div>
+            <div class="form-group">
+                <label for="loginPassword">Contraseña</label>
+                <input type="password" id="loginPassword" required placeholder="••••••••" autocomplete="current-password">
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full">Entrar</button>
+            <div id="loginError" class="form-message error"></div>
+        </form>
+    </div>
+
+    <!-- ==================== PANEL (visible tras iniciar sesión) ==================== -->
+    <div id="panel" class="admin-panel" style="display:none;">
+        <header class="admin-topbar">
+            <div class="admin-topbar-logo">
+                <img src="assets/logo-capital-risk.png" alt="Capital Risk Brokers">
+                <span>Panel Administrativo</span>
+            </div>
+            <div>
+                <a href="index.html" target="_blank" class="btn btn-outline btn-sm">Ver sitio</a>
+                <button id="logoutBtn" class="btn btn-sm btn-danger">Cerrar sesión</button>
+            </div>
+        </header>
+
+        <main class="admin-main">
+            <div id="saveMessage" class="form-message"></div>
+
+            <!-- INICIO / HERO -->
+            <section class="admin-card">
+                <h2><i class="fas fa-house"></i> Sección de Inicio</h2>
+                <div class="form-group">
+                    <label>Título principal</label>
+                    <input type="text" id="f_hero_titulo">
+                </div>
+                <div class="form-group">
+                    <label>Subtítulo</label>
+                    <textarea id="f_hero_subtitulo" rows="3"></textarea>
+                </div>
+            </section>
+
+            <!-- ESTADÍSTICAS -->
+            <section class="admin-card">
+                <h2><i class="fas fa-chart-simple"></i> Estadísticas ("Quiénes Somos")</h2>
+                <div class="admin-grid-3">
+                    <div class="form-group">
+                        <label>Clientes satisfechos</label>
+                        <input type="text" id="f_stats_clientes">
+                    </div>
+                    <div class="form-group">
+                        <label>Años de experiencia</label>
+                        <input type="text" id="f_stats_anios">
+                    </div>
+                    <div class="form-group">
+                        <label>Aseguradoras aliadas</label>
+                        <input type="text" id="f_stats_aseguradoras">
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONTACTO -->
+            <section class="admin-card">
+                <h2><i class="fas fa-address-book"></i> Información de Contacto</h2>
+                <div class="form-group">
+                    <label>Dirección</label>
+                    <input type="text" id="f_contacto_direccion">
+                </div>
+                <div class="admin-grid-2">
+                    <div class="form-group">
+                        <label>Teléfono</label>
+                        <input type="text" id="f_contacto_telefono">
+                    </div>
+                    <div class="form-group">
+                        <label>Correo</label>
+                        <input type="email" id="f_contacto_email">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Horario de atención</label>
+                    <input type="text" id="f_contacto_horario">
+                </div>
+            </section>
+
+            <!-- WHATSAPP -->
+            <section class="admin-card">
+                <h2><i class="fab fa-whatsapp"></i> Botón de WhatsApp</h2>
+                <p class="admin-hint">Este es el número al que llegan los mensajes del botón flotante y del botón de contacto. Formato: código de país + número, sin espacios ni símbolos (ej: 50589049798).</p>
+                <div class="form-group">
+                    <label>Número de WhatsApp</label>
+                    <input type="text" id="f_wa_numero">
+                </div>
+                <div class="form-group">
+                    <label>Mensaje predefinido</label>
+                    <textarea id="f_wa_mensaje" rows="2"></textarea>
+                </div>
+            </section>
+
+            <!-- ENLACES DE INTERÉS -->
+            <section class="admin-card">
+                <h2><i class="fas fa-link"></i> Enlaces de Interés</h2>
+                <p class="admin-hint">Estos enlaces aparecen en la sección "Enlaces de Interés" del sitio.</p>
+                <div id="enlacesEditor"></div>
+                <button type="button" id="addEnlaceBtn" class="btn btn-outline btn-sm">
+                    <i class="fas fa-plus"></i> Agregar enlace
+                </button>
+            </section>
+
+            <button id="saveBtn" class="btn btn-primary btn-full btn-save">
+                <i class="fas fa-floppy-disk"></i> Guardar cambios
+            </button>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+    <script src="supabase-config.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

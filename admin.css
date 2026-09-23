@@ -1,0 +1,192 @@
+/* ==================== LOGIN ==================== */
+.admin-body {
+    background: var(--bg-light);
+}
+
+.admin-login-screen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.admin-login-card {
+    background: var(--white);
+    padding: 40px 32px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+}
+
+.admin-login-logo {
+    height: 44px;
+    margin-bottom: 20px;
+}
+
+.admin-login-card h1 {
+    font-size: 22px;
+    color: var(--primary-dark);
+    margin-bottom: 6px;
+}
+
+.admin-login-sub {
+    color: var(--text-gray);
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+.admin-login-card .form-group {
+    text-align: left;
+    margin-bottom: 16px;
+}
+
+/* ==================== TOPBAR ==================== */
+.admin-topbar {
+    background: var(--white);
+    box-shadow: var(--shadow);
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.admin-topbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+    color: var(--primary-dark);
+}
+
+.admin-topbar-logo img {
+    height: 32px;
+}
+
+.admin-topbar > div:last-child {
+    display: flex;
+    gap: 10px;
+}
+
+/* ==================== LAYOUT PRINCIPAL ==================== */
+.admin-main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 30px 20px 60px;
+}
+
+.admin-card {
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 24px;
+    margin-bottom: 22px;
+}
+
+.admin-card h2 {
+    font-size: 17px;
+    color: var(--primary-dark);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.admin-hint {
+    font-size: 13px;
+    color: var(--text-gray);
+    margin-bottom: 14px;
+}
+
+.admin-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.admin-grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+}
+
+@media (max-width: 600px) {
+    .admin-grid-2, .admin-grid-3 {
+        grid-template-columns: 1fr;
+    }
+}
+
+.admin-card .form-group {
+    margin-bottom: 14px;
+}
+
+.admin-card .form-group:last-child {
+    margin-bottom: 0;
+}
+
+.admin-card input,
+.admin-card textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.admin-card label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+}
+
+/* ==================== ENLACES EDITOR ==================== */
+.enlace-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.enlace-row input {
+    flex: 1;
+}
+
+.enlace-row .remove-enlace {
+    background: none;
+    border: none;
+    color: #c0392b;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 6px;
+}
+
+/* ==================== BOTONES ==================== */
+.btn-sm {
+    padding: 8px 14px;
+    font-size: 13px;
+}
+
+.btn-danger {
+    background: #c0392b;
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-save {
+    position: sticky;
+    bottom: 20px;
+}
+
+#saveMessage:empty {
+    display: none;
+}
